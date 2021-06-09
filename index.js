@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const mongodb = require("mongodb");
 
@@ -8,7 +10,7 @@ const port = process.env.PORT || 3000;
 
 const mongoClient = mongodb.MongoClient;
 const objectId = mongodb.ObjectID;
-const dbUrl = "mongodb+srv://deepak:YdYJu4Kuflgmmabe@cluster0.tws7k.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const dbUrl = process.env.DB_URL;
 
 /* app.get("/", (req, res) => {
   mongoClient.connect(dbUrl, (err, client) => {
